@@ -5,6 +5,10 @@
   color: aliceblue;
 
 }
+
+.brandName{
+  color: aquamarine;
+}
 .navBar{
   display: flex;
   flex-direction: row;  
