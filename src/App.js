@@ -1,6 +1,9 @@
 
 import './App.css';
-import Home from "./pages/Home"
+import NavBar from './components/NavBar';
+import Home from "./pages/Home";
+
+
 
 function App() {
   const styles={};
@@ -8,7 +11,8 @@ function App() {
   return (
     <>
 
-    <Home/>
+    <NavBar/>    
+    <itemListContainer/>
       
     </>
   );

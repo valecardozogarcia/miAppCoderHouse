@@ -7,7 +7,7 @@
 }
 
 .brandName{
-  color: aquamarine;
+  color: rgb(15, 141, 99);
 }
 .navBar{
   display: flex;
@@ -15,6 +15,7 @@
   background: url(../src/inicio.jpg);
   background-size: cover;
   width: 100%;
+  
  }
 
  .item-nav{
@@ -22,8 +23,20 @@
    margin-left: 50px;
    margin-right: 50px;  
    color: aliceblue; 
+    
    
  }
+ .carrito{
+  display:inline-block;
+    float:left;
+    height:70px;
+    width:70px;
+ 
+   
+
+ }
+ 
+ 
  .logo{
   width: 80px;
   height:80px;
