@@ -2,6 +2,7 @@
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from "./pages/Home";
+import ItemListContainer from './container/itemListContainer';
 
 
 
@@ -12,7 +13,7 @@ function App() {
     <>
 
     <NavBar/>    
-    <itemListContainer/>
+    <ItemListContainer/>
       
     </>
   );
