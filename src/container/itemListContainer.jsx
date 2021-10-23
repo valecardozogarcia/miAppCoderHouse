@@ -9,7 +9,7 @@ const ItemListContainer=(props)=>{
     useEffect( () => {
 
         const listaProductos= new Promise( (resolve,reject) => {
-            setTimeout(() => {resolve(productosdata)},3000);
+            setTimeout(() => {resolve(productosdata)},2000);
         });
         listaProductos.then((datosDeProductos) => {
             setProductos(datosDeProductos)
