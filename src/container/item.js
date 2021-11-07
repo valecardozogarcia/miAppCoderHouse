@@ -8,7 +8,7 @@ export const Item = ({id,titulo,precio,img,categoria}) =>{
     return(
         
         <Link to={`/producto/${id}`}>
-        <div className={`item_card ${categoria}-categoria`}>
+        <div className={`items ${categoria}-categoria`}>
 
         <Card style={{ width: '18rem' }}>
 

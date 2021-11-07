@@ -6,9 +6,10 @@ export const ItemDetail = ({ id,titulo,precio,img}) => {
     <h1>EL ITEM NO EXISTE</h1>
   ) : (
     <>
-      <h1>{titulo}</h1>
+      <h1>{titulo.toUpperCase()}</h1>
       <img src={img} alt={titulo} />
       <p>$ {precio}</p>
+      
     </>
   );
 };
