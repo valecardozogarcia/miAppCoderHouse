@@ -24,5 +24,7 @@ Bootsrap para el formato
 
 **Funcionamiento**
 
+
+![Animation-miapp](https://user-images.githubusercontent.com/30180522/140630685-f6b3e5ee-64e2-427e-967d-20d208779764.gif)
 **Autor**
 **Valeria Cardozo**
