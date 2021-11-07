@@ -12,18 +12,21 @@ const ItemList = ({ productos })=>{
     return (
         <>
         <Container>
-            <Row className="text-center">
+            <section className="flex-row">
                 {productos?.map((items)=>(
                     <Col xs={11} md={4} key={items?.id}>
                     <Item
+                        {...items} key={items.id}
                         img={items?.img} 
+                        categoria={items?.categoria}
                         titulo={items?.titulo} 
                         detalle={items?.detalle} 
                         precio={'$ ' + items?.precio.toLocaleString("es-UY")} 
+                        
                     />
                     </Col>
                 ))}
-            </Row>
+            </section>
 
         </Container>
             

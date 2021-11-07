@@ -23,6 +23,7 @@
    margin-left: 50px;
    margin-right: 50px;  
    color: aliceblue; 
+   
     
    
  }
@@ -36,6 +37,16 @@
 
  }
  
+ .activeClass {
+  color: rgb(58, 218, 143);
+  font-size: 25px;
+  flex-direction: column;
+}
+ 
+.small-img {
+  height: 90px;
+  
+}
  
  .logo{
   width: 80px;
