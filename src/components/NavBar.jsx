@@ -1,5 +1,5 @@
 import React from "react";
-import CartWidget from "./CartWidget";
+import CartWidget from "./Carrito/CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
@@ -13,6 +13,7 @@ const NavBar = () => {
     <section>
         <div className= "navBar">
     {categorias.map((cat) => {
+        
     return(       
                                  
           
@@ -20,14 +21,19 @@ const NavBar = () => {
             
             <NavLink to={cat.address} exact activeClassName="activeClass">
               {cat.text}
-            </NavLink>                        
+            </NavLink>   
+                
+                          
 
 
     </div>  
    )
+   
     
     })}
-    <CartWidget/> 
+    <NavLink to="/cart"><p>Cart</p></NavLink> 
+        
+    
     </div>
     </section>
     

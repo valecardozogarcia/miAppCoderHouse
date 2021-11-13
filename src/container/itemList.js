@@ -21,7 +21,8 @@ const ItemList = ({ productos })=>{
                         categoria={items?.categoria}
                         titulo={items?.titulo} 
                         detalle={items?.detalle} 
-                        precio={'$ ' + items?.precio.toLocaleString("es-UY")} 
+                        precio={'$ ' + items?.precio.toLocaleString("es-UY")}
+                        //stock={'$ ' + items?.stock.toLocaleString("es-UY")} 
                         
                     />
                     </Col>

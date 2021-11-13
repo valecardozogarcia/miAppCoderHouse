@@ -4,26 +4,21 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-export const Item = ({id,titulo,precio,img,categoria}) =>{
+export const Item = ({id,titulo,precio,stock,img,categoria}) =>{
     return(
         
+       
+        <div className='item'>
+        
         <Link to={`/producto/${id}`}>
-        <div className={`items ${categoria}-categoria`}>
-
-        <Card style={{ width: '18rem' }}>
-
-        <Card.Header as="h5">{titulo.toUpperCase()}</Card.Header>
-        <Card.Body>
-        <Card.Img src={img} variant="bottom" className={'small-img'}/>
-
-                <Card.Text>{precio}</Card.Text>
-                <Button variant="primary">Ver más</Button>
-            </Card.Body>
-
-        </Card>
-        </div>
-
+        <img src={img} className={"small-img"}/>
+        <h2>{titulo}</h2>
+        <h4>{precio}</h4>
         </Link>
+        <Button variant="primary">Ver más</Button>
+        </div>
+   
+
     
      );
         
