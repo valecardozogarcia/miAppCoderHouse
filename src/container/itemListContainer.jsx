@@ -1,41 +1,42 @@
 import React, {useState,useEffect} from "react";
-import productosdata from "../Datos/productosdata";
 import ItemList from "./itemList";
 import { useParams } from 'react-router-dom';
 
-const ItemListContainer=(props)=>{
+import db from "../firebase/firebase";
+import {collection, query, where, getDocs} from "firebase/firestore";
+
+const ItemListContainer=({greeting})=>{
     const[productos,setProductos]=useState([]) //cargo productos
     const[cargando,setCargando]= useState(true)//para que cuando este cargando muestre en pantalla cargando
     
-    const { categoriaId } = useParams();
+    const { categoryId } = useParams();
     
     
 
     useEffect(() => {
-
         setCargando(true);
-    const getItems = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productosdata);
-      }, 1000);
-    });
 
-    getItems.then((res) => {
-        
-        categoriaId
-          ? setProductos(res.filter((i) => i.categoria === categoriaId))
-          : setProductos(res);
+    const myItems = categoryId
+    ? query(collection(db,"productos"),where('category', '==', categoryId))
+    : collection(db, 'productos');
+
+    getDocs(myItems)
+      .then((res) => {
+        const results = res.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id };
+        });
+
+        setProductos(results);
       })
       .finally(() => setCargando(false));
-  }, [categoriaId]);
-
-   
+  }, [categoryId]);
     
-    return(
+    return cargando ?(
+      <h2>CARGANDO...</h2>
+      ) : (
         <>
-             <h1 className="text-center">{props.titulo}</h1>
-             {cargando ? <h2 className="text-center">Cargando productos</h2> : <ItemList productos={productos}/>}
-        
+          <h3 style={{ textAlign: 'center' }}>{greeting}</h3>
+          <ItemList items={productos} />
         </>
        
     )

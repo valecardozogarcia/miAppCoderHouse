@@ -17,12 +17,12 @@ const ItemList = ({ productos })=>{
                     <Col xs={11} md={4} key={items?.id}>
                     <Item
                         {...items} key={items.id}
-                        img={items?.img} 
-                        categoria={items?.categoria}
-                        titulo={items?.titulo} 
-                        detalle={items?.detalle} 
-                        precio={'$ ' + items?.precio.toLocaleString("es-UY")}
-                        //stock={'$ ' + items?.stock.toLocaleString("es-UY")} 
+                        image={items?.image} 
+                        category={items?.category}
+                        name={items?.name} 
+                        //detalle={items?.detalle} 
+                        price={'$ ' + items?.price.toLocaleString("es-UY")}
+                        stock={'$ ' + items?.stock.toLocaleString("es-UY")} 
                         
                     />
                     </Col>

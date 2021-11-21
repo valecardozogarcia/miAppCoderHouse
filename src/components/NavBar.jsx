@@ -3,7 +3,7 @@ import CartWidget from "./Carrito/CartWidget";
 import { NavLink, Link } from "react-router-dom";
 
 const NavBar = () => {
-    const categorias=[
+    const categories=[
         {id:"plantas",address:"/categoria/infusiones",text:"Infusiones"},
         {id:"otros",address:"/categoria/otros",text:"Otros"},
         {id:"Todos",address:"/",text:"Todos los productos"}];
@@ -12,7 +12,7 @@ const NavBar = () => {
     
     <section>
         <div className= "navBar">
-    {categorias.map((cat) => {
+    {categories.map((cat) => {
         
     return(       
                                  

@@ -1,36 +1,38 @@
 const productosdata=[
 
     {
-        id:"1",
-        titulo: "té verde",
-        precio: 200,
-        img: "/images/matcha.jpg",
-        categoria: "infusiones",
+        
+        name: "té verde",
+        price: 200,
+        image: "/images/matcha.jpg",
+        category: "infusiones",
         stock: 100,
     },
     {
-        id:"2",
-        titulo: "té negro",
-        precio: 300,
-        img:"/images/te-negro.jpg",
-        categoria: "infusiones",
+        
+        name: "té negro",
+        price: 200,
+        image: "/images/te-negro.jpg",
+        category: "infusiones",
         stock: 100,
+        
     },
     {
-        id:"3",
-        titulo: "palo santo",
-        precio: 200,
-        img:"/images/palo-santo.jpg",
-        categoria: "otros",
-        stock: 100,
+        name: "palo santo",
+        price: 230,
+        image: "/images/palo-santo.jpg",
+        category: "otros",
+        stock: 200,
+
+        
     },
     {
-        id:"3",
-        titulo: "Té de limón",
-        precio: 300,
-        img:"/images/te-limon.jpg",
-        categoria: "otros",
-        stock: 100,
+        name: "té de limón",
+        price: 210,
+        image: "/images/te-limon.jpg",
+        category: "infusiones",
+        stock: 210,
+
     }
     
 ];

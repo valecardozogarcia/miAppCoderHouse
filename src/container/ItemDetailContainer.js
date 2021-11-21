@@ -1,28 +1,33 @@
-import React,{ useState, useEffect } from "react"; 
-import productosdata from '../Datos/productosdata';
+import React, { useState, useEffect } from 'react';
+import { ItemDetail } from './ItemDetail';
 import { useParams } from 'react-router-dom';
-import ItemDetail from "../components/ItemDetail";
+
+import db from './firebase/firebase';
+import { doc, getDoc } from 'firebase/firestore';
 
 export const ItemDetailContainer = () => {
     const [producto, setProductos] = useState({});
     const [cargador,setCargador] = useState(true);
     
-    const {id} = useParams();
+    const {itemId} = useParams();
 
     useEffect(() => {
         setCargador(true);
-        const getItems = new Promise((resolve) =>{
-            setTimeout(()=>{
-                resolve(productosdata);
-            },1000);
-        });
-        getItems
-        .then((res) => {
-            setProductos(res.find((i)=> i.id === id));
-        })
-        .finally(()=> setCargador(false));
-    },[id]);
-    return cargador? <h3>Cargando...</h3>:<ItemDetail {...producto}/>;
+
+    const myItem = doc(db, 'productos', itemId);
+
+    getDoc(myItem)
+      .then((res) => {
+        const result = { id: res.id, ...res.data() };
+        setProductos(result);
+      })
+      .finally(() => {
+        setCargador(false);
+      });
+  }, []);     
+        
+    
+    return cargador? <h1>Cargando...</h1>:<ItemDetail {...producto}/>;
     
 
 }
